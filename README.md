@@ -3,6 +3,7 @@
 
 
 우아한 코끼리 아두이노 담당 이유리(@zzyury)입니다.
+
 H/W는 Arduino Uno 보드에 ESP8266, LCD, Solenoid, Pull up button를 추가하였고, Arduino IDE를 사용하였습니다.
 
 
