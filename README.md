@@ -19,7 +19,7 @@ const char* password = "31733173";
 
 >  비트레이트를 115200으로 맞춰주고 WiFi를 연결합니다.
 
-```
+```c++
 void setup() {
 
   Serial.begin(115200);
@@ -34,7 +34,7 @@ void setup() {
 
 > Arduino JSON을 이용하여 http 통신을 진행합니다. GET으로 data를 요청하여 storeUID, washingMachineUID, phoneNumber, taskFrom, taskTo, bookedTime, qrState, arduinoState와 washingMachineState까지 총 9개의 data를 받아옵니다.
 
-```
+```c++
     HTTPClient http; //Object of class HTTPClient
     http.begin("http://35.213.84.65");
     int httpCode = http.GET();
@@ -68,7 +68,7 @@ void setup() {
 #### User phone number
 > JSON으로 받아온 data 중 phoneNumber를 print합니다.
 
-```
+```c++
 lcd.clear();
 lcd.setCursor(0, 0);
 lcd.print("USER : "); lcd.print(phoneNumber);
@@ -79,7 +79,7 @@ lcd.print("USER : "); lcd.print(phoneNumber);
 
 > JSON으로 받아온 data 중 taskFrom과 taskTo를 이용해 남은 시간을 계산합니다.
 
-```
+```c++
   int toYear, toMonth, toDay, toHour, toMinute, toSecond;
   int fromYear, fromMonth, fromDay, fromHour, fromMinute, fromSecond;
 
@@ -106,7 +106,7 @@ lcd.print("USER : "); lcd.print(phoneNumber);
 
 > 계산된 남은시간 timeleft를 print합니다.
 
-```
+```c++
 lcd.setCursor(0, 1);
 lcd.print("Time : "); lcd.print(timeleft);
 ```
@@ -116,7 +116,7 @@ lcd.print("Time : "); lcd.print(timeleft);
 > 본인인증을 하기 전, solenoid는 잠금 상태를 유지합니다.
 본인인증을 마친 후, pull up button이 눌릴 경우에는 solenoid 잠금이 풀리며 pull up button을 놓으면 다시 잠깁니다.
 
-```
+```c++
 int sensorVal = digitalRead(9);
       if (arduinoState == "closed") {
         digitalWrite(13, HIGH);
