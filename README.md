@@ -12,7 +12,7 @@ H/W는 Arduino Uno 보드에 ESP8266, LCD, Solenoid, Pull up button를 추가하
 
 > ESP8266 WiFi module과 연결할 WiFi의 이름과 비밀번호를 입력합니다. 
 
-```
+```c++
 const char* ssid = "alpha3173 5G";
 const char* password = "31733173";
 ```
